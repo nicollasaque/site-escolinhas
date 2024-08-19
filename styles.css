@@ -1,33 +1,75 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    line-height: 1.6;
     color: #333;
 }
 
 header {
     background-color: #4CAF50;
-    color: white;
     padding: 10px 0;
     text-align: center;
 }
 
-main {
-    padding: 20px;
+header nav h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background: url('futebol.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
     text-align: center;
 }
 
-button {
+.cta {
+    background-color: #ff5722;
     padding: 10px 20px;
-    background-color: #4CAF50;
     color: white;
-    border: none;
-    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-button:hover {
-    background-color: #45a049;
+.sobre, .beneficios, .galeria, .contato {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.beneficios {
+    background-color: #f4f4f4;
+}
+
+.benefit-item {
+    margin: 20px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 5px;
 }
 
 footer {
@@ -35,7 +77,4 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
