@@ -12,13 +12,16 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #000000; /* Preto */
-    color: #ffffff; /* Branco */
+    height: 150px;
+    background-image: url('head.png');
+    background-size: 10;
+    background-position-y: 220px;
+    color: #ffffff;
     padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
     z-index: 1000;
 }
 
@@ -102,7 +105,7 @@ header .menu-toggle {
         position: absolute;
         top: 60px;
         right: 20px;
-        background-color: #000000; /* Preto */
+        background-color: #c8102e; /* Preto */
         padding: 10px;
         border-radius: 5px;
         width: calc(100% - 40px); /* Ajuste de largura para melhor alinhamento */
@@ -163,7 +166,7 @@ header .menu-toggle {
 }
 
 footer {
-    background-color: #000000; /* Preto */
+    background-color: #c8102e; /* Preto */
     color: #ffffff; /* Branco */
     text-align: center;
     padding: 10px 0;
