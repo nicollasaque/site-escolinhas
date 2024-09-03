@@ -7,6 +7,10 @@ body {
     background-color: #f4f4f4;
 }
 
+section {
+    scroll-margin-top: 150px; /* Ajuste este valor conforme a altura do seu header */
+}
+
 header {
     position: fixed;
     top: 0;
@@ -156,7 +160,7 @@ header .menu-toggle {
 
 .beneficios, .galeria, .contato {
     padding: 0px 20px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .sobre {
@@ -176,7 +180,7 @@ header .menu-toggle {
 .sobre h2 {
     font-size: 4rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     color: #000;
 }
 
@@ -239,7 +243,7 @@ footer {
 }
 .hero {
     position: relative;
-    height:70vh;
+    height:40vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -274,7 +278,7 @@ footer {
     text-decoration: none;
     border-radius: 5px;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .beneficios {
@@ -341,4 +345,152 @@ footer {
     .beneficio-item {
         margin-bottom: 20px;
     }
+}
+
+.patrocinadores {
+    text-align: center;
+    padding: 0px 70px;
+    background-color: #f4f4f4;
+}
+
+.patrocinadores-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.patrocinador-item {
+    flex: 1;
+    max-width: 300px;
+    padding: 10px;
+}
+
+.patrocinador-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.patrocinadores h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.galeria {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.galeria h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.galeria-secao {
+    margin-bottom: 40px;
+}
+
+.galeria-secao h3 {
+    font-size: 2rem;
+    color: #c8102e; /* Cor do subtítulo */
+    margin-bottom: 20px;
+    /* text-align: center; */
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+}
+
+.carousel-item {
+    flex: 0 0 20%; /* Ajusta a largura de cada item para 40% do contêiner pai */
+    height: 200px; /* Aumenta a altura para se adequar à nova largura */
+    overflow: hidden; /* Esconde as partes da imagem que ultrapassam o contêiner */
+    position: relative;
+    border-radius: 10px; /* Mantém as bordas arredondadas */
+    margin: 10px; /* Espaçamento entre as imagens */
+}
+
+.carousel-item img {
+    width: 100%; /* Assegura que a imagem ocupe toda a largura do contêiner */
+    height: 100%; /* Assegura que a imagem ocupe toda a altura do contêiner */
+    object-fit: cover; /* Corta a imagem para se ajustar ao contêiner */
+    object-position: center; /* Centraliza a parte visível da imagem */
+    border-radius: 10px; /* Mantém as bordas arredondadas da imagem */
+}
+
+/* Estilizando as barras de rolagem para melhor aparência */
+.carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background-color: #c8102e;
+    border-radius: 10px;
+}
+
+.contato {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000; /* Preto ou qualquer cor desejada */
+    margin: 0;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.map-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px; /* Ajuste a altura conforme necessário */
+    border: 0;
+}
+
+.info-container {
+    flex: 1;
+}
+
+.school-info {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.school-info h3 {
+    margin-top: 0;
+}
+
+.school-info a {
+    color: #c8102e; /* Vermelho do clube ou qualquer cor desejada */
+    text-decoration: none;
+}
+
+.school-info a:hover {
+    text-decoration: underline;
 }
