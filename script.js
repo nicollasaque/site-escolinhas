@@ -118,7 +118,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="map-container">
                     <iframe
                         src="${escolinha.mapaSrc}"
-                        width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+                        class="iframe"
+                        style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
                 <div class="info-container">
