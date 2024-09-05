@@ -1,9 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
+    const overlay = document.querySelector('.overlay');
+    const closeMenu = document.querySelector('.close-menu a');
 
     menuToggle.addEventListener('click', function () {
         menu.classList.toggle('show');
+        overlay.classList.toggle('show');
+    });
+
+    closeMenu.addEventListener('click', function (e) {
+        e.preventDefault();
+        menu.classList.remove('show');
+        overlay.classList.remove('show');
+    });
+
+    overlay.addEventListener('click', function () {
+        menu.classList.remove('show');
+        overlay.classList.remove('show');
+    });
+
+    document.querySelectorAll('.menu a').forEach(link => {
+        link.addEventListener('click', function () {
+            menu.classList.remove('show');
+            overlay.classList.remove('show');
+        });
     });
 
     const campeonatosFotos = [

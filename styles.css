@@ -8,7 +8,8 @@ body {
 }
 
 section {
-    scroll-margin-top: 150px; /* Ajuste este valor conforme a altura do seu header */
+    scroll-margin-top: 170px;
+    /* Ajuste este valor conforme a altura do seu header */
 }
 
 @media (max-width: 768px) {
@@ -88,6 +89,7 @@ header .logo {
 
 header .logo img {
     max-width: 150px;
+    margin-left: -30px;
 }
 
 header .menu-toggle {
@@ -97,7 +99,26 @@ header .menu-toggle {
     cursor: pointer;
 }
 
+header .menu {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    header .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 5;
+    }
+
+    header .overlay.show {
+        display: flex;
+    }
+
     header .menu-left,
     header .menu-right {
         display: none;
@@ -110,22 +131,32 @@ header .menu-toggle {
     header .menu {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 20px;
+        position: fixed;
+        top: -15px;
+        left: 0;
+        width: 50%;
+        height: 100%;
         background-color: #c8102e;
-        padding: 10px;
         border-radius: 5px;
-        width: calc(100% - 40px);
+        list-style-type: none;
+        z-index: 10;
     }
 
     header .menu li {
-        margin: 10px 0;
+        margin-top: 30px;
     }
 
     header .menu a {
         color: #ffffff;
         font-weight: 600;
+        text-decoration: none;
+    }
+
+    header .close-menu {
+        font-size: 30px;
+        color: #ffffff;
+        text-align: right;
+        margin-right: 20px;
     }
 
     header .menu.show {
@@ -150,9 +181,9 @@ header .menu-toggle {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent 40%),
-                linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent 40%),
-                linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent 40%),
-                linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent 40%);
+        linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent 40%),
+        linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent 40%),
+        linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent 40%);
     z-index: 0;
     pointer-events: none;
 }
@@ -165,7 +196,10 @@ header .menu-toggle {
     border-radius: 5px;
 }
 
-.beneficios, .galeria, .contato, .sobre {
+.beneficios,
+.galeria,
+.contato,
+.sobre {
     padding: 0px 20px;
 }
 
@@ -217,7 +251,8 @@ header .menu-toggle {
         text-align: center;
     }
 
-    .sobre-content, .sobre-image {
+    .sobre-content,
+    .sobre-image {
         max-width: 100%;
         padding: 0;
     }
@@ -252,9 +287,10 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
 .hero {
     position: relative;
-    height:40vh;
+    height: 40vh;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -277,7 +313,7 @@ footer {
     z-index: 1;
     margin-bottom: 0px;
     color: white;
-    background-color: rgb(0,0,0,0.8);
+    background-color: rgb(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 30px;
 }
@@ -324,9 +360,9 @@ footer {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent 40%),
-                linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent 40%),
-                linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent 40%),
-                linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent 40%);
+        linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent 40%),
+        linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent 40%),
+        linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent 40%);
     border-radius: 10px;
     z-index: 1;
 }
@@ -374,31 +410,40 @@ footer {
 
 .patrocinador-item {
     display: flex;
-    max-height: 200px; /* Limita a altura máxima do item */
-    overflow: hidden; /* Garante que a imagem não ultrapasse o contêiner */
+    max-height: 200px;
+    /* Limita a altura máxima do item */
+    overflow: hidden;
+    /* Garante que a imagem não ultrapasse o contêiner */
     margin-top: 0px;
 }
 
 .patrocinador-item img {
-    max-height: 100%; /* Ajusta a altura da imagem ao contêiner */
-    width: auto; /* Mantém a proporção da imagem */
-    height: auto; /* Ajusta a altura proporcionalmente */
-    object-fit: contain; /* Ajusta a imagem para cobrir o contêiner sem distorção */
+    max-height: 100%;
+    /* Ajusta a altura da imagem ao contêiner */
+    width: auto;
+    /* Mantém a proporção da imagem */
+    height: auto;
+    /* Ajusta a altura proporcionalmente */
+    object-fit: contain;
+    /* Ajusta a imagem para cobrir o contêiner sem distorção */
 }
 
 @media (max-width: 768px) {
     .patrocinadores {
-        padding: 0px 20px; /* Ajusta o padding para dispositivos móveis */
+        padding: 0px 20px;
+        /* Ajusta o padding para dispositivos móveis */
     }
 
     .patrocinadores-grid {
-        flex-direction: column; /* Alinha os itens verticalmente em dispositivos móveis */
+        flex-direction: column;
+        /* Alinha os itens verticalmente em dispositivos móveis */
         align-items: center;
         justify-content: center;
     }
 
     .patrocinador-item {
-        max-width: 100%; /* Ajusta a largura do item para ocupar toda a largura disponível */
+        max-width: 100%;
+        /* Ajusta a largura do item para ocupar toda a largura disponível */
         margin-top: 0px;
     }
 
@@ -412,10 +457,12 @@ footer {
         transform: scale(1);
         opacity: 1;
     }
+
     50% {
         transform: scale(1.1);
         opacity: 0.8;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -554,7 +601,7 @@ footer {
 }
 
 .school-info {
-    background-color: rgb(0,0,0,0.7);
+    background-color: rgb(0, 0, 0, 0.7);
     padding: 20px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -593,7 +640,8 @@ footer {
 
 .search-container button {
     padding: 10px 20px;
-    background-color: #ff5722; /* Ajuste conforme seu tema */
+    background-color: #ff5722;
+    /* Ajuste conforme seu tema */
     border: none;
     color: #fff;
     border-radius: 4px;
