@@ -16,11 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'campeonato2.jpg',
         'campeonato3.jpg',
         'campeonato4.jpg',
-        'campeonato5.jpg',
-        'campeonato2.jpg',
-        'campeonato3.jpg',
-        'campeonato4.jpg',
-        'campeonato5.jpg',
+        'campeonato5.jpg'
     ];
 
     const treinamentosFotos = [
@@ -31,11 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'treinamento1.jpg',
         'treinamento2.jpg',
         'treinamento3.jpg',
-        'treinamento4.jpg',
-        'treinamento1.jpg',
-        'treinamento2.jpg',
-        'treinamento3.jpg',
-        'treinamento4.jpg',
+        'treinamento4.jpg'
     ];
 
     const patrocinadores = [
@@ -77,24 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     ];
 
-    function criarCarrossel(fotos, id) {
-        const carousel = document.querySelector(`#${id} .carousel`);
-
-        fotos.forEach(foto => {
-            const item = document.createElement('div');
-            item.className = 'carousel-item';
-
-            const img = document.createElement('img');
-            img.src = foto;
-            img.alt = foto.split('.')[0];
-
-            item.appendChild(img);
-            carousel.appendChild(item);
-        });
-    }
-
-    criarCarrossel(campeonatosFotos, 'campeonatos');
-    criarCarrossel(treinamentosFotos, 'treinamentos');
+    obterLocalizacaoAtual();
 
     const scrollContainer = document.getElementById('scroll-container');
 
@@ -161,8 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    obterLocalizacaoAtual();
-
     function carregarPatrocinadores() {
         const container = document.getElementById('patrocinadores-grid');
 
@@ -180,4 +153,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.onload = carregarPatrocinadores;
+
+    function criarCarrossel(fotos, id) {
+        const carousel = document.querySelector(`#${id} .carousel`);
+
+        fotos.forEach(foto => {
+            const item = document.createElement('div');
+            item.className = 'carousel-item';
+
+            const img = document.createElement('img');
+            img.src = foto;
+            img.alt = foto.split('.')[0];
+
+            item.appendChild(img);
+            carousel.appendChild(item);
+        });
+    }
+
+    criarCarrossel(campeonatosFotos, 'campeonatos');
+    criarCarrossel(treinamentosFotos, 'treinamentos');
 });
