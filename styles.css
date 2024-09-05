@@ -611,7 +611,11 @@ footer {
 
 @media (max-width: 768px) {
     .map-container iframe {
-        width: 300px;
-        height: 300px;
+        width: 230px;
+        height: 270px;
+    }
+
+    .info-container {
+        margin-right: 20px;
     }
 }
