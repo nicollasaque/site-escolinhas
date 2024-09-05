@@ -11,6 +11,12 @@ section {
     scroll-margin-top: 150px; /* Ajuste este valor conforme a altura do seu header */
 }
 
+@media (max-width: 768px) {
+    section {
+        margin: 0px;
+    }
+}
+
 header {
     position: fixed;
     top: 0;
@@ -180,6 +186,13 @@ header .menu-toggle {
     font-size: 4rem;
     font-weight: 700;
     color: #000;
+    /* margin: 0px; */
+}
+
+@media (max-width: 768px) {
+    .sobre h2 {
+        margin: 0px;
+    }
 }
 
 .sobre p {
@@ -354,8 +367,44 @@ footer {
 .patrocinadores-grid {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 60px;
     margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.patrocinador-item {
+    display: flex;
+    max-height: 200px; /* Limita a altura máxima do item */
+    overflow: hidden; /* Garante que a imagem não ultrapasse o contêiner */
+    margin-top: 0px;
+}
+
+.patrocinador-item img {
+    max-height: 100%; /* Ajusta a altura da imagem ao contêiner */
+    width: auto; /* Mantém a proporção da imagem */
+    height: auto; /* Ajusta a altura proporcionalmente */
+    object-fit: contain; /* Ajusta a imagem para cobrir o contêiner sem distorção */
+}
+
+@media (max-width: 768px) {
+    .patrocinadores {
+        padding: 0px 20px; /* Ajusta o padding para dispositivos móveis */
+    }
+
+    .patrocinadores-grid {
+        flex-direction: column; /* Alinha os itens verticalmente em dispositivos móveis */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .patrocinador-item {
+        max-width: 100%; /* Ajusta a largura do item para ocupar toda a largura disponível */
+        margin-top: 0px;
+    }
+
+    .patrocinadores h2 {
+        margin: 0px;
+    }
 }
 
 @keyframes pulse {
@@ -420,6 +469,7 @@ footer {
 
 .carousel-item {
     flex: 0 0 20%;
+    min-width: 200px;
     height: 200px;
     overflow: hidden;
     position: relative;
@@ -482,7 +532,7 @@ footer {
 }
 
 .scroll-container::-webkit-scrollbar {
-    height: 8px;
+    height: 10px;
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
@@ -495,12 +545,6 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-right: 20px;
-}
-
-.map-container {
-    flex: 1;
-    margin-right: 20px;
-    margin-left: 10px;
 }
 
 .info-container {
