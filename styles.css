@@ -616,6 +616,7 @@ footer {
     }
 
     .info-container {
+        height: 270px;
         margin-right: 20px;
     }
 }
